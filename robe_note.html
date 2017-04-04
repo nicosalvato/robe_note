@@ -135,6 +135,12 @@ Error message and password prompt
 
 <li>$:/state/sidebar</li>
 
+<li>$:/state/tab--1963855381</li>
+
+<li>$:/state/tab--2112689675</li>
+
+<li>$:/state/tab-1749438307</li>
+
 <li>$:/state/tab/moresidebar-401116514</li>
 
 <li>$:/state/tab/sidebar--1835078512</li>
@@ -145,13 +151,21 @@ Error message and password prompt
 
 <li>$:/temp/search</li>
 
+<li>$:/theme</li>
+
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>$:/themes/tiddlywiki/vanilla/options/sidebarlayout</li>
+
+<li>$:/view</li>
+
 <li>Home</li>
 
 <li>Mefort</li>
+
+<li>PostgreSQL</li>
 
 <li>Windows Tips</li>
 
@@ -7835,13 +7849,22 @@ Error message and password prompt
 <div created="20170313155106315" modified="20170313155108330" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
+<div created="20170404155320568" modified="20170404155455559" title="$:/state/tab--1963855381">
+<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+</div>
+<div created="20170404155347320" modified="20170404155406639" title="$:/state/tab--2112689675">
+<pre>$:/core/ui/ControlPanel/Advanced</pre>
+</div>
+<div created="20170404155308000" modified="20170404155445520" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
+</div>
 <div created="20170317075437384" modified="20170317075448943" title="$:/state/tab/moresidebar-401116514">
 <pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
 <div created="20170317075419096" modified="20170317075453215" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="[[Windows Tips]] Home" title="$:/StoryList">
+<div list="$:/ControlPanel PostgreSQL Home" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -7860,6 +7883,9 @@ Error message and password prompt
 </div>
 <div created="20170313154354578" modified="20170317075409616" title="$:/temp/search">
 <pre></pre>
+</div>
+<div created="20170404155313977" modified="20170404155317536" title="$:/theme">
+<pre>$:/themes/tiddlywiki/snowwhite</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.13">
 <pre>{
@@ -7970,6 +7996,12 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20170404155502126" modified="20170404155502126" title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
+<pre>fluid-fixed</pre>
+</div>
+<div created="20170404155324511" modified="20170404155328352" title="$:/view">
+<pre>classic</pre>
+</div>
 <div created="20170313151249963" modified="20170313155230450" tags="TOC" title="Home">
 <pre></pre>
 </div>
@@ -7979,6 +8011,14 @@ Error message and password prompt
 * Aggiornare i report, vedere la proprietà `jasper.dir.reports` nel file //Me4RT-config.groovy// per sapere dove si trovano
 
 * Controllare che sia presente l'opzione `scryba.sign.server.trustStore = '/usr/lib/jvm/java-7-oracle/jre/lib/security/cacerts'` se i certificati sono stati configurati con lo script //update-cacert.ssh// che si trova nel [[Repository Medas|http://repository.medas-solutions.it/ca-certs/]]</pre>
+</div>
+<div created="20170404154950226" modified="20170404155259265" tags="TOC PostgreSQL" title="PostgreSQL">
+<pre>Statics on a database
+
+```
+select * from pg_stat_activity where datname = '&lt;db_name&gt;'
+```
+</pre>
 </div>
 <div created="20170317080047459" modified="20170317080244716" tags="TOC Windows" title="Windows Tips">
 <pre>Find process running on a certain port:
