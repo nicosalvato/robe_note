@@ -161,7 +161,15 @@ Error message and password prompt
 
 <li>$:/view</li>
 
+<li>Command Operations</li>
+
+<li>File and Directory Operations</li>
+
+<li>File and Directory Permissions</li>
+
 <li>Home</li>
+
+<li>Linux</li>
 
 <li>Mefort</li>
 
@@ -7864,7 +7872,7 @@ Error message and password prompt
 <div created="20170317075419096" modified="20170317075453215" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
-<div list="$:/ControlPanel PostgreSQL Home" title="$:/StoryList">
+<div list="[[File and Directory Permissions]] [[Command Operations]] [[File and Directory Operations]] Linux" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -8002,7 +8010,128 @@ Error message and password prompt
 <div created="20170404155324511" modified="20170404155328352" title="$:/view">
 <pre>classic</pre>
 </div>
+<div created="20170406080457145" modified="20170406080657876" tags="Linux Command" title="Command Operations">
+<pre>Get command type:
+
+```
+type &lt;command&gt;
+```
+Search among manuals:
+
+```
+man -k &lt;hint&gt;
+```
+List manuals:
+
+```
+info
+```
+
+
+</pre>
+</div>
+<div created="20170406080143425" modified="20170406082331113" tags="Linux File Directory" title="File and Directory Operations">
+<pre>Get file type:
+
+```
+file &lt;file&gt;
+```
+Create empty file:
+
+```
+touch &lt;file&gt;
+```
+Create directory including parents:
+
+```
+mkdir -p &lt;path&gt;
+```
+Remove directory:
+
+```
+rmdir -p &lt;path&gt;
+```
+Back to previous path:
+
+```
+cd -
+```
+Copy a file with all its attributes (good for backup):
+
+```
+cp -a &lt;file&gt;
+```
+
+Move files and directories recursively:
+
+```
+mv &lt;path&gt;
+```
+
+Difference between two files:
+
+```
+diff &lt;files1&gt; &lt;file2&gt;
+```
+Remove file:
+
+```
+rm &lt;file&gt;
+rm -r &lt;directory&gt;
+```
+</pre>
+</div>
+<div created="20170406082531754" modified="20170406082909781" tags="Linux Permission File Directory" title="File and Directory Permissions">
+<pre>Files and directories are crated with default permissions called &quot;''umask&quot;'' (664)
+
+$ chmod ugo+rx &lt;file&gt;
+$ chmod ugo-x &lt;file&gt;
+$ chmod ugo=rx &lt;file&gt;
+$ chmod a+x &lt;file&gt;
+
+u user
+g group
+o others
++ aggiunge un permesso
+- toglie
+= resetta i permessi e aggiunge quelli che vogliamo
+a+x aggiungi il permesso di esecuzione a tutti
+
+R W X R W X R W X
+4 2 1 4 2 1 4 2 1
+
+rw-rw-r-- si traduce in 664
+$ chmod 664 &lt;file&gt; resetta i permessi e dà i permessi rw-rw-r--, che sono la umask di default
+$ chmod 400 &lt;file&gt; dà permessi solo in lettura al proprietario r-------- (il porprietario può sempre scrivere sul file, ma gli verrà chiesta conferma)
+$ chmod 777 &lt;directory&gt; tutti possono leggere e modificare il contenuto
+$ chmod 755 &lt;file&gt; l'utente può fare tutto, gli altri possono leggerlo ed eseguirlo
+
+Root e il proprietario possono sempre gestire i permessi sui file.
+
+rwxrwxrwt: permesso della cartella tmp. La t è detta sticky bit. Lo sticky bit si controlla con una cifra iniziale, di solito intesa a 0.
+$ chmod 0777 &lt;directory&gt; sticky bit spento, tutti possono fare tutto
+$ chmod 1777 &lt;directory&gt; sticky bit acceso, tutti possono fare tutto ma solo il proprietario di un file può cancellare quel file. Usato nella tmp dove tutti scrivono ma
+						 si vuole evitare che qualcuno cancelli cose di altri.
+
+$ umask 002 &lt;file&gt;
+
+Massime Linux:
+- tutto è un file
+- nessun file è eseguibile di default (quindi il massimo permesso assegnabile di default ad un file è 666, mentre per una directory è 777)
+
+La umask è stata fatta per sottrazione: 666 - 002 = 664 per i file, 777 - 002 = 775. Quindi i permessi di default con umask 002 sono 664 per i file e 775 per le directory.
+$ umask 066, io ho tutti i permessi gli altri posson solo entrare nelle directory
+$ umask 077, io ho tutti i permessi e gli altri non possono fare nulla
+La maschera è legata alla sessione utente, non dipende dalla directory in cui mi trovo!
+
+Per leggere e scrivere un file devo poter entrare nella directory. Altrimenti riesco solo a vedere i nomi dei file ch contiene.
+Per eliminare un file devo avere il permesso sulla directory che lo contiene. Ergo, se ho i permessi sulla directory, posso cancellare un file sul quale non ho nessun permesso.
+Per copiare un file devo poter leggere il contenuto. Quindi, rm e mv sono operazioni sulla directory, mentre cp è un'operazione che coinvolge anche il file. </pre>
+</div>
 <div created="20170313151249963" modified="20170313155230450" tags="TOC" title="Home">
+<pre></pre>
+</div>
+<div created="20170406080007314" modified="20170406080138491" tags="TOC Linux" title="Linux">
 <pre></pre>
 </div>
 <div created="20170313154407595" modified="20170313155735351" tags="mefort TOC" title="Mefort">
